@@ -1,0 +1,252 @@
+<!-- Navbar  -->
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark p-md-4" >
+    <div class="container">
+      <a class="navbar-brand text-white" href="#">ACS</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon text-black"></span>
+      </button>
+  
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <div class="mx-auto"></div>
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link text-white" style="cursor: pointer;">Dashboard</a>
+          </li>
+          &nbsp; &nbsp;<li class="nav-item">
+              <a class="nav-link text-white" style="cursor: pointer;" (click) = "onSelect()">Profile</a></li>
+              <li class="nav-item">
+                <a class="nav-link text-white" data-bs-toggle="modal" data-bs-target="#exampleModal1" style="cursor: pointer;">Cart</a></li>
+              &nbsp; &nbsp;
+              <li class="nav-item active">
+              <a class="nav-link text-black" *ngIf="loggedIn" (click)="logoutUser()" href="/landing-page" style="cursor: pointer;">Logout</a>
+              </li>
+         
+            
+  
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!--Landing page Image-->
+<div class="banner-image w-100 d-flex justify-content-center align-items-center">
+    <div class="content text-center">
+        <br><br><br><br><br>
+        <div class="text-size-h1 text-white"><i><strong>Dealer's Dashboard</strong></i></div>
+        <p class="text-white">Welcome, {{dealerDetails.dealerName}} | {{dealerDetails.dealerEmail}}</p><br>
+        <div class="search-container">
+          <input type="text" name="search" placeholder="Search..." class="search-input" [(ngModel)] = "searchText">
+          <a href="#" class="search-btn">
+                  <span class="material-icons">
+                    search
+                  </span>  
+          </a>
+      </div>
+      <br><br><br>
+    </div>
+   
+  </div>
+
+     <!-- Card View -->
+ 
+ <div class="container" >
+    <div class="row" >
+      <div class="col-sm-3" *ngFor="let data of liveCrops | filter:searchText" style="margin-bottom: 30px; margin-top: 30px; display: flex; justify-content: center;">
+       <div class="card" style="width: 18rem; border-radius: 10px;">
+         <div class="inner">
+         <img src="bg-image3.jpg" width="180" height="180" class="card-img-top" style="border-radius: 10px;">
+       </div>
+         <div class="card-body">
+           <div class="card-title">{{data.cropName}}
+             <div class="card-subtitle">{{data.location}} | {{data.cropQuantity}}</div>
+           </div>
+           <h6><strong>Rs. {{data.price}}</strong></h6>
+           <div class="row">
+             <div class="col-sm-6">
+               <a href="#" class="btn btn-success" style="margin-top: 15px;" (click) = "onBuyRes(data)" data-bs-toggle="modal" data-bs-target="#exampleModal3">Add to cart</a> 
+             </div>
+             <div class="col-sm-6" style="margin-top: 20px; display: flex; justify-content: right;">
+               <button class="btn-trans" (click)="onliveCropsViewRes(data)" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+               <span class="material-icons">visibility</span></button>
+               
+             </div>
+           </div>
+           
+ 
+         </div>
+       </div>
+      </div>
+    </div>
+  </div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel3" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel3">Add to cart</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="formValue" method="post">
+          <div class="container register">
+            
+                     
+                              <h4>Source through Paytm</h4><br>
+                              
+                                  <div class="col-md-10">
+                                      <div>
+                                        <label class="form_label"> ORDER ID</label>
+                                        <br> <input id="ORDER_ID" tabindex="1" maxlength="20" size="20"
+                                                class="form_field" name="ORDER_ID" autocomplete="off"  placeholder="ORDER ID" formControlName="id">
+                                      </div>
+                                      <div>
+                                        <br><label class="form_label">CUSTOMER ID</label>
+                                        <br> <input type="text" placeholder="Customer ID" formControlName="uploadedBy"
+                                                 name="CUST_ID" class="form_field"/>
+                                      </div>
+                                      <div>
+                                        <br><label class="form_label">INDUSTRY TYPE</label>
+                                        <br> <input type="text"  placeholder="INDUSTRY_TYPE_ID" value="Crops"
+                                                 name="INDUSTRY_TYPE_ID" class="form_field"/>
+                                      </div>
+                                      <div>
+                                        <br><label class="form_label">CHANNEL ID</label>
+                                        <br> <input type="text"  placeholder="Channel" value="WEB-INF"
+                                                 name="CHANNEL_ID" class="form_field"/>
+                                      </div>
+                                      <div>
+                                        <br><label class="form_label">Crop Quantity</label>
+                                        <br><input type="text" placeholder="Quantity" formControlName="cropQuantity"
+                                               name="cropqnty" class="form_field"/>
+                                    </div>
+                                      <div>
+                                        <br><label class="form_label">Amount</label>
+                                          <br><input type="text"  placeholder="Amount" formControlName="price"
+                                                 name="TXN_AMOUNT" class="form_field"/>
+                                      </div>
+                                      <h6><p class="size">*note : The next page you see, will be a re-confirmation page for your payment details.</p></h6>
+                                  </div>
+                          
+      
+                  
+          </div>
+      </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="makepayment()">Proceed to Pay</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- Modal for Farmer details -->
+    <!-- Modal for view -->
+ <!-- <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel3" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel3">Quick View</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="row" style="margin-top: 20px; margin-bottom: 20px;">
+          <div class="col-sm-5" style="display: flex; justify-content: center; align-items: center;">
+            <img src="{{oneFarmer.fimage}}" width="200" height="200" style="border-radius: 100px;">
+          </div>
+          <div class="col-sm-7" style="padding-right: 15px;">
+            <div style="margin-bottom: 10px; font-size: 30px; margin-top: 10px;">{{liveCropsViewObject.cropname}}</div>
+            <strong>Uploaded by:</strong>  | {{oneFarmer.fid}}
+            <strong>Crop ID:</strong> &nbsp;{{liveCropsViewObject.cropid}}<br>
+            <strong>Quality:</strong>&nbsp;{{liveCropsViewObject.cropqlty}} | {{liveCropsViewObject.cropqnty}} | Rs. {{liveCropsViewObject.cropprice}}<br><br>
+            <strong>Description:</strong><br>
+            {{liveCropsViewObject.cropdesc}}<br><br>
+            <strong>Contact:</strong> &nbsp;{{liveCropsViewObject.cropcontact}} | {{liveCropsViewObject.croplocation}}<br>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  -->
+  <!-- Modal for view -->
+ <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+   <div class="modal-dialog modal-lg">
+     <div class="modal-content">
+       <div class="modal-header">
+         <h5 class="modal-title" id="exampleModalLabel">Quick View</h5>
+         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+       </div>
+       <div class="modal-body">
+         <div class="row" style="margin-top: 20px; margin-bottom: 20px;">
+           <div class="col-sm-5" style="display: flex; justify-content: center; align-items: center;">
+             <img src="bg-image2.jpg" width="200" height="200" style="border-radius: 100px;">
+           </div>
+           <div class="col-sm-7" style="padding-right: 15px;">
+             <div style="margin-bottom: 10px; font-size: 30px; margin-top: 10px;">{{liveCropsViewObject.cropName}}</div>
+             <strong>Uploaded by:</strong> {{liveCropsViewObject.uploadedBy}} |
+             <strong>Crop ID:</strong> &nbsp;{{liveCropsViewObject.id}}<br>
+             <strong>Quality:</strong>&nbsp;{{liveCropsViewObject.cropType}} | {{liveCropsViewObject.cropQuantity}} | Rs. {{liveCropsViewObject.price}}<br><br>
+             <strong>Description:</strong><br>
+             Best Quality & Fresh
+             <strong>Contact:</strong> &nbsp;{{liveCropsViewObject.uploadedBy}} | {{liveCropsViewObject.location}}<br>
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>
+ </div>
+ 
+
+
+ <!-- model-cart -->
+ <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel1">Cart Details</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Crop Name</th>
+              <th>Crop Quantity</th>
+              
+              <th>Price</th>
+              <th>Uploaded By</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+          <tbody>
+            <ng-container *ngFor="let crop of dealerDetails.crops">
+              <tr>
+                <td>{{ crop.id }}</td>
+                <td>{{ crop.cropName }}</td>
+                
+                <td>{{ crop.cropQuantity }}</td>
+                
+                <td>{{ crop.price }}</td>
+                <td>{{ crop.uploadedBy }}</td>
+                <td>
+                  <button type="button" class="btn btn-danger">Delete</button>
+                </td>
+              </tr>
+            </ng-container>
+          </tbody>
+        </table>
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="makepayment()">Make Payment</button>
+      </div>
+    </div>
+  </div>
+</div>

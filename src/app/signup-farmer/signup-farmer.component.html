@@ -1,0 +1,45 @@
+
+
+<section>
+  <div class="imgBx">
+    <img src="bg-image3.jpg" width="100%" height="100%">
+  </div>
+  <div class="contentBx">
+    <div class="formBx">
+      <h2>Sign Up As Farmer</h2><br>
+      <form (ngSubmit)="onSingup()">
+        <div class="inputBx">
+          <span>Farmer Email</span>
+          <input [(ngModel)]="credentials.farmeremail" required type="text" name="farmeremail"/>
+        </div>
+        <div class="inputBx">
+          <span>Farmer Name</span>
+          <input [(ngModel)]="credentials.farmername" required type="text" name="farmername"/>
+        </div>
+        <div class="inputBx">
+          <span>Password</span>
+          <input [(ngModel)]="credentials.password" required type="password" name="password"/>
+        </div>
+        <div class="inputBx">
+          <span>Farmer Contact</span>
+          <input [(ngModel)]="credentials.farmerContactNo" required type="text" name="farmerContactNo"/>
+        </div>
+        <div class="inputBx">
+          <span>Farmer Address</span>
+          <input [(ngModel)]="credentials.farmerAddress" required type="text" name="farmerAddress"/>
+        </div>
+        <div class="inputBx">
+          <span>Bank Account Number</span>
+          <input [(ngModel)]="credentials.bankDetails" required type="text" name="bankDetails"/>
+        </div><br>
+        <div style="display: flex; justify-content: flex-start; align-items: flex-start;">
+          <button type="submit"> Sign Up </button> &nbsp; <button type="button" (click)="backToHome()">Home</button></div>
+        <div class="inputBx">
+          <p>Do you already have an account? <a href="/login-farmer">Login</a></p>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+ 

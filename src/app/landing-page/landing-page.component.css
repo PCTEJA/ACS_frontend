@@ -1,0 +1,247 @@
+.banner-image
+{
+    background-image: url(img/bg-image3.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+li:hover
+{
+    background: #4d4c4c;
+    transition: .5s;
+    border-radius: 40%;
+}
+li.active
+{
+    background: #fdfdfd;
+    transition: .5s;
+    border-radius: 40%;
+}
+
+.text-size-h1
+{
+    font-size: 50px;
+}
+.text-grey
+{
+    color: #dbdada;
+}
+.button-css
+{
+    border: 2px solid #fff;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 15px;
+    text-align: center;
+    text-decoration: none;
+    padding: 15px 35px;
+    color: white;
+    background: transparent;
+}
+
+.button-css:hover
+{
+    box-shadow: 0px 0px 10px rgb(255, 255, 255), 0px 0px 10px rgb(255, 255, 255,1);
+    background-color: rgb(253, 253, 253);
+    background: transparent;
+}
+
+.button-css-contact
+{
+    border: 2px solid rgb(37, 37, 37);
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 15px;
+    text-align: center;
+    text-decoration: none;
+    padding: 15px 35px;
+    color: rgb(37, 37, 37);
+    background: transparent;
+}
+
+.button-css-contact:hover
+{
+    box-shadow: 0px 0px 10px rgb(37, 36, 36), 0px 0px 10px rgb(37, 36, 36,1);
+    background-color: rgb(37, 36, 36);
+    background: transparent;
+}
+
+.div-left, .div-right
+{   
+    width: 50%;
+}
+
+.div-left
+{
+    float: left;
+    left: 0;
+}
+.div-right
+{
+    float: right;
+    text-align: center;
+    right: 0;
+}
+
+.image-grid
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-gap: 0.5rem;
+    grid-template-areas: 
+                'img-1 img-2'
+                'img-4 img-3';
+    
+}
+
+.gridimg1
+{
+    grid-area: img-1;
+    min-height: 10rem;
+    min-width: 10rem;
+    background-image: url('img/bg-image2.jpg');
+    border-radius: 20px;
+    transition: all 1s ease;
+    background-position: center;
+    background-size: 150%;
+}
+.gridimg1:hover{
+    transform: scale(1.05);
+}
+.gridimg2
+{
+    grid-area: img-2;
+    min-height: 10rem;
+    min-width: 10rem;
+    background-image: url('img/bg-image2.jpg');
+    border-radius: 20px;
+    transition: all 1s ease;
+    background-position: center;
+    background-size: 150%;
+}
+.gridimg2:hover{
+    transform: scale(1.05);
+}
+.gridimg3
+{
+    grid-area: img-3;
+    min-height: 10rem;
+    min-width: 10rem;
+    background-image: url('img/bg-image2.jpg');
+    border-radius: 20px;
+    transition: all 1s ease;
+    background-position: center;
+    background-size: 150%;
+}
+.gridimg3:hover{
+    transform: scale(1.05);
+}
+.gridimg4
+{
+    grid-area: img-4;
+    min-height: 10rem;
+    min-width: 10rem;
+    background-image: url('img/bg-image7.jpg');
+    border-radius: 20px;
+    transition: all 1s ease;
+    background-position: center;
+    background-size: 150%;
+
+}
+.gridimg4:hover{
+    transform: scale(1.05);
+}
+.button-css-signin
+{
+    border: 2px solid rgb(37, 37, 37);
+    font-size: 13px;
+    font-weight: bold;
+    border-radius: 15px;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px 30px;
+    color: rgb(255, 255, 255);
+    background-color: black;
+}
+
+.button-css-signin:hover
+{
+    box-shadow: 0px 0px 10px rgb(245, 245, 245), 0px 0px 10px rgb(243, 243, 243);
+    background-color: rgb(236, 233, 233);
+    color: black;
+    background: transparent;
+}
+
+.inner
+{
+    overflow: hidden;
+}
+.inner img
+{
+    transition: all 1.5s ease;
+}
+
+.inner:hover img{
+    transform: scale(1.5);
+}
+
+.contact-us {
+    padding: 70px 0px;
+    background: rgb(37, 37, 37);
+}
+.section-title h2 {
+    color: #ffffff;
+    font-size: 30px;
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: 8px;
+    border-bottom: 5px solid #af8070;
+    padding-bottom: 10px;
+    display: inline-block;
+}
+.section-title p {
+    color: #e8e8e8;
+    margin-bottom: 30px;
+}
+.contact-us input,
+.contact-us textarea {
+    background: #fafafa;
+}
+.contact-us textarea {
+    min-height: 188px;
+    max-width: 100%;
+}
+.contact-us .map {
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.button-css-contact-form
+{
+    border: 2px solid rgb(253, 252, 252);
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 15px;
+    text-align: center;
+    text-decoration: none;
+    padding: 15px 35px;
+    color: rgb(255, 255, 255);
+    background-color: black;
+}
+
+.button-css-contact-form:hover
+{
+    box-shadow: 0px 0px 10px rgb(245, 245, 245), 0px 0px 10px rgb(243, 243, 243);
+    background-color: rgb(236, 233, 233);
+    color: black;
+
+}
+.col-md-6{
+    padding-top: 25px;
+}
+.card-img-top{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

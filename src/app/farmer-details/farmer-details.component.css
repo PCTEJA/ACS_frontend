@@ -1,0 +1,235 @@
+.banner-image
+{
+    background-image: url(img/gradient.webp);
+    background-size: 100% 75%;
+    background-attachment: fixed;
+}
+
+input.ng-invalid.ng-touched
+{
+    border-bottom:5px solid red;
+}
+
+input.ng-valid.ng-touched
+{
+    border-bottom: 5px solid greenyellow;
+}
+
+li:hover
+{
+    background: #4d4c4c;
+    transition: .5s;
+    border-radius: 40%;
+}
+li.active
+{
+    background: #fdfdfd;
+    transition: .5s;
+    border-radius: 40%;
+}
+
+.profile-image
+{
+    margin-bottom: -80px;
+    margin-left: 80px;
+    margin-top: 80px;
+}
+
+.header-bg
+{
+    background-color: rgb(37, 37, 37);
+    color: white;
+    font-weight: bold;
+    font-size: 17px;
+    padding: 7px;
+}
+
+.button-edit
+{
+    
+    border: 2px solid rgb(22, 22, 22);
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 15px;
+    text-align: center;
+    text-decoration: none;
+    padding: 15px 35px;
+    color: rgb(255, 255, 255);
+    background-color: black;
+}
+
+.button-edit:hover
+{
+    box-shadow: 0px 0px 10px rgb(27, 27, 27), 0px 0px 10px rgb(37, 37, 37);
+    background-color: rgb(24, 24, 24);
+    color: rgb(255, 255, 255);
+
+}
+
+.button-delete
+{
+    border: 2px solid rgb(253, 15, 15);
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 15px;
+    text-align: center;
+    text-decoration: none;
+    padding: 15px 35px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(230, 28, 28);
+}
+
+.button-delete:hover
+{
+    box-shadow: 0px 0px 10px rgb(94, 93, 93), 0px 0px 10px rgb(245, 35, 35);
+    background-color: rgb(235, 52, 52);
+    color: rgb(253, 253, 253);
+
+}
+
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+  }
+  
+  .fa-twitter {
+    background: #55ACEE;
+    color: white;
+  }
+  
+  .fa-google {
+    background: #dd4b39;
+    color: white;
+  }
+  
+  .fa-linkedin {
+    background: #007bb5;
+    color: white;
+  }
+  
+  .fa-youtube {
+    background: #bb0000;
+    color: white;
+  }
+  
+  .fa-instagram {
+    background: #125688;
+    color: white;
+  }
+
+  .fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 70px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+    border-radius: 50%;
+  }
+  
+  .fa:hover {
+      opacity: 0.7;
+  }
+  
+  .button-css
+{
+    border: 2px solid #fff;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 15px;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px 30px;
+    color: white;
+    background: transparent;
+}
+
+.button-css:hover
+{
+    box-shadow: 0px 0px 10px rgb(255, 255, 255), 0px 0px 10px rgb(255, 255, 255,1);
+    background-color: rgb(253, 253, 253);
+    background: transparent;
+}
+
+.form_group
+{
+    position: relative;
+    padding: 15px 15px 15px;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.form_field
+{
+    width: 100%;
+    border: 0;
+    border-bottom: 2px solid#9b9b9b;
+    outline: none;
+    font-size: 0.9rem;
+    color: rgb(29, 29, 29);
+    padding: 7px 0;
+    background-color: transparent;
+    transition: border-color 0.2s;
+}
+
+.form_field::placeholder
+{
+    color: transparent;
+}
+
+.form_label
+{
+    position: absolute;
+    display: block;
+    transition: 0.2s;
+    font-size: 0.9rem;
+    color: #9b9b9b;
+}
+
+.form_field:placeholder-shown ~ .form_label
+{
+    font-size:0.9rem ;
+    cursor: text;
+    top: 20px;
+}
+
+.form_field:focus
+{
+    padding-bottom: 6px;
+    font-weight: 700;
+    border-width: 3px;
+    border-image: linear-gradient(to right, #020202, #525252);
+    border-image-slice: 1;
+}
+
+.form_field:focus ~ .form_label
+{
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 0.9rem;
+    color: #2e2e2e;
+    font-weight: 700;
+}
+
+.modal-header
+{
+    background-color: #292828;
+}
+
+.modal-content
+{
+    border: none;
+}
+
+.modal-title
+{
+    color: white;
+    font-size: 17px;
+}
+
+.btn-close
+{
+    background-color: white;
+}

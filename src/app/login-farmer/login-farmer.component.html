@@ -1,0 +1,33 @@
+
+
+<section>
+    <div class="imgBx">
+      <img src="bg-image3.jpg" width="100%" height="100%">
+    </div>
+    <div class="contentBx">
+      <div class="formBx">
+        <h2>Login As Farmer</h2><br>
+        <form (ngSubmit)="onSubmit()">
+          <div class="inputBx">
+            <span>Farmer ID</span>
+            <input [(ngModel)]="fcredentials.username" required minlength="20" type="text" name="femail"/>
+          </div>
+          <div class="inputBx">
+            <span>Password</span>
+            <input [(ngModel)]="fcredentials.password" required type="password" name="password"/>
+          </div>
+          <div class="remember">
+            <label><input type="checkbox" name="rme"> Remeber me</label>
+          </div>
+          <br>
+          <div style="display: flex; justify-content: flex-start; align-items: flex-start;">
+            <button type="submit"> Login </button> &nbsp; <button type="button" (click)="backToHome()">Home</button></div>
+          <div class="inputBx"><br>
+            <p>Don't have an account? <a href="/signup-farmer">Register</a></p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+  
+   

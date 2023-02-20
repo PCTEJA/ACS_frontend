@@ -1,0 +1,214 @@
+<router-outlet></router-outlet>
+<!-- Navbar  -->
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark p-md-4" >
+    <div class="container">
+      <a class="navbar-brand text-white" href="#">ACS</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon text-black"></span>
+      </button>
+  
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <div class="mx-auto"></div>
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link text-white" href="#">Home</a>
+          </li>
+          &nbsp; &nbsp;<li class="nav-item">
+            <a class="nav-link text-white" href="#about">About</a>
+          </li>
+          &nbsp; &nbsp;<li class="nav-item">
+            <a class="nav-link text-white" href="#gallery">Project-Team</a>
+          </li>
+          &nbsp; &nbsp;<li class="nav-item">
+            <a class="nav-link text-white" href="#contact">Contact</a>
+          </li>
+          &nbsp; &nbsp;<li class="nav-item">
+            <a class="nav-link text-white" href="#services">Sign In</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!--Landing page Image-->
+  <div class="banner-image w-100 vh-100 d-flex justify-content-center align-items-center">
+      <div class="content text-center">
+          <br><br>
+          <div class="text-size-h1 text-white">ACS</div><br>
+          <p class="text-grey">ACS - Agriculture Crop System is an Agro based website, enabling and creating concrete paths for the Farmers<br>
+         and the Dealers to sell and buy quality crops through technology and ideas</p><br>
+         <button class="button-css" onclick="window.location.href='#about'">READ MORE</button>
+      </div>
+     
+  </div>
+  
+
+  <!-- Services -->
+  <!-- <div class="container my-5 d-grid gap-5 content text-center"  id="services">
+    <div class="p-5 border">
+        <h2>CHOOSE A SERVICE</h2><br><br>
+        <div class="row" style="display: flex; justify-content: center; align-items: center;">
+            <div class="col-md-6" style="display: flex; justify-content: center; align-items: center;">
+                <div class="card" style="width: 20rem; height: 25rem; border-radius: 15px;">
+                <div class="inner">
+                    <img src="bg-image3.jpg" class="card-img-top" style="border-radius: 15px;">
+                </div>
+                    <div class="card-body">
+                      <h5><b>Are you a Farmer?</b></h5>
+                      <p>Sign In as a Farmer to get access to the services that are reserved for farmers.</p>
+                      <br><button class="button-css-contact" routerLink="/farmer-dashboard/:tk"> Sign In </button>&nbsp;&nbsp;<button type="button" routerLink="/signup-farmer" class="button-css-signin">Register</button>
+                    </div>
+                  </div>
+            </div>
+            <div class="col-md-6" style="display: flex; justify-content: center; align-items: center;">
+                <div class="card" style="width: 20rem; height: 25rem; border-radius: 15px; ">
+                    <div class="inner">
+                    <img src="bg-image7.jpg" class="card-img-top" style="border-radius: 15px;">
+                </div>
+                    <div class="card-body">
+                      <h5><b>Are you a Dealer?</b></h5>
+                      <p>Sign In as a Dealer to get access to the services that are reserved for dealers.</p>
+                      <br><button class="button-css-contact" routerLink="/dealer-dashboard/:token"> Sign In </button>&nbsp;&nbsp;<button routerLink="/signup-dealer" class="button-css-signin">Register</button>
+                    </div>
+                  </div>
+            </div>
+            
+            <div class="col-md-6" style="display: flex; justify-content: center; align-items: center;">
+                <div class="card" style="width: 20rem; height: 25rem; border-radius: 15px;">
+                    <div class="inner">
+                    <img src="bg-image2.jpg" class="card-img-top" style="border-radius: 15px;">
+                </div>
+                    <div class="card-body">
+                      <h5><b>Are you an Admin?</b></h5>
+                      <p>Sign In as a Admin to get access to the services that are reserved for admins.</p>
+                      <br><button class="button-css-contact" routerLink="/login-admin"> Sign In </button>&nbsp;&nbsp;
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+  </div>
+ -->
+ <div class="container my-5 content text-center" id="services">
+  <div class="p-5 border">
+    <h2>CHOOSE A SERVICE</h2>
+    <br><br>
+    <div class="row justify-content-center">
+      <div class="col-md-4 mb-5">
+        <div class="card" style="width: 20rem; height: 25rem; border-radius: 15px;">
+          <div class="inner">
+            <img src="bg-image3.jpg" class="card-img-top" style="border-radius: 15px;">
+          </div>
+          <div class="card-body">
+            <h5><b>Are you a Farmer?</b></h5>
+            <p>Sign In as a Farmer to get access to the services that are reserved for farmers.</p>
+            <br>
+            <button class="button-css-contact" routerLink="/farmer-dashboard/:tk"> Sign In </button>&nbsp;&nbsp;
+            <button type="button" routerLink="/signup-farmer" class="button-css-signin">Register</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-5">
+        <div class="card" style="width: 20rem; height: 25rem; border-radius: 15px;">
+          <div class="inner">
+            <img src="bg-image7.jpg" class="card-img-top" style="border-radius: 15px;">
+          </div>
+          <div class="card-body">
+            <h5><b>Are you a Dealer?</b></h5>
+            <p>Sign In as a Dealer to get access to the services that are reserved for dealers.</p>
+            <br>
+            <button class="button-css-contact" routerLink="/dealer-dashboard/:token"> Sign In </button>&nbsp;&nbsp;
+            <button routerLink="/signup-dealer" class="button-css-signin">Register</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-5">
+        <div class="card" style="width: 20rem; height: 25rem; border-radius: 15px;">
+          <div class="inner">
+            <img src="bg-image2.jpg" class="card-img-top" style="border-radius: 15px;">
+          </div>
+          <div class="card-body">
+            <h5><b>Are you an Admin?</b></h5>
+            <p>Sign In as an Admin to get access to the services that are reserved for admins.</p>
+            <br>
+            <button class="button-css-contact" routerLink="/login-admin"> Sign In </button>&nbsp;&nbsp;
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <!-- About -->
+  <div class="container my-5 d-grid gap-5 content text-center" id="about">
+      <div class="p-5 border">
+        <div class="fade-scroll"><h2>ABOUT US</h2></div><br>
+        <p class="animation appears-delayed text-black">
+          ACS is an agricultural website that empowers and facilitates farmers and dealers in the trading of quality crops through innovative technology and ideas. Our web application offers two distinct services - one for farmers and the other for dealers. Farmers are provided with a platform to add their crops, and are given complete control to modify, update and remove their listed crops while ensuring transparency of all details. On the other hand, dealers can purchase listed crops after conducting a thorough quality, quantity and pricing evaluation. Our main focus is to provide top-quality, transparent and cost-effective solutions to all our stakeholders.
+            <br><br><b>Please Reach-Out to us for any Query, using our contact page.</b>
+        </p><br>
+        <button class="button-css-contact" onclick="window.location.href='#contact'">CONTACT US</button>
+      </div>
+  </div>
+
+  <!-- Gallery -->
+  <div class="container my-5 d-grid gap-5 content text-center" id="gallery">
+    <div class="p-5 border">
+        <div class="div-left">
+            <div class="image-grid">
+                <a href="#" class="gridimg1 inner"></a>
+                <a href="#" class="gridimg2 inner"></a>
+                <a href="#" class="gridimg3 inner"></a>
+                <a href="#" class="gridimg4 inner"></a>
+            </div>
+        </div>
+        <div class="div-right">
+            <br><br><h2>PROJECT-TEAM</h2><br>
+            <p>The Project is Designed and Developed by X-Person</p><br>
+            <button class="button-css-contact" onclick="window.location.href='#gallery'">To Connect</button>
+        </div>
+    </div>
+  </div>
+
+  
+
+  <!-- Contact us -->
+  <!-- Contact Us Section -->
+  <section class="contact-us" id="contact">
+    <div class="container" style="margin-bottom: -50px;">
+        <div class="row">
+            <div class="col-md-12 text-white text-center" style="margin-top: -10px;">
+                
+                    <h2>CONTACT US</h2>
+            
+            </div>
+        </div>
+        <br><br>
+        <div class="row">
+            <div class="col-lg-7">
+                <form action="/" class="mb-4 mb-lg-0">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" />
+                        </div><br>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" />
+                    </div><br>
+                    <div class="form-group">
+                        <textarea class="form-control" name="message" placeholder="Type Message"></textarea>
+                    </div><br>
+                    <button type="submit" class="button-css-contact-form">SUBMIT</button>
+                </form>
+            </div>
+
+            <div class="col-lg-5">
+                <div class="map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3571289.733943155!2d76.08560099999998!3d29.058775699999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390e4a4b98404f57%3A0x75ffae70833e8448!2sShahbad%2C%20Haryana%20136135!5e0!3m2!1sen!2sin!4v1594195370933!5m2!1sen!2sin" width="100%" height="350" frameborder="0" style="border: 0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

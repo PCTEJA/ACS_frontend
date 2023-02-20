@@ -1,0 +1,210 @@
+<router-outlet></router-outlet>
+<!-- Navbar  -->
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark p-md-4" >
+    <div class="container">
+      <a class="navbar-brand text-black" href="#">ACS</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon text-black"></span>
+      </button>
+  
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <div class="mx-auto"></div>
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link text-black" href="#">Home</a>
+          </li>
+          &nbsp; &nbsp;<li class="nav-item">
+            <a class="nav-link text-black" *ngIf="loggedIn" (click)="logoutUser()" href="/landing-page" style="cursor: pointer;">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <div class="container my-5 content text-center" id="services">
+    <div class="p-5 border">
+      <h2>ADMIN DASHBOARD</h2>
+      <br><br>
+      <div class="row justify-content-center">
+        <div class="col-md-4 mb-5">
+          <div class="card" style="width: 20rem; height: 25rem; border-radius: 15px;">
+            <div class="inner">
+              <img src="bg-image3.jpg" class="card-img-top" style="border-radius: 15px;">
+            </div>
+            <div class="card-body">
+              <h5><b>Farmer List</b></h5>
+              <p>Check out the Farmer List and Perform Actions</p>
+              <br>
+              <button class="button-css-contact" > <a class="nav-link text-black" data-bs-toggle="modal" data-bs-target="#exampleModal1" style="cursor: pointer;">Check Farmer</a></button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-5">
+          <div class="card" style="width: 20rem; height: 25rem; border-radius: 15px;">
+            <div class="inner">
+              <img src="bg-image7.jpg" class="card-img-top" style="border-radius: 15px;">
+            </div>
+            <div class="card-body">
+              <h5><b>Dealer List</b></h5>
+              <p>Check out the Dealer List and Perform Actions</p>
+              <br>
+              <button class="button-css-contact" > <a class="nav-link text-black" data-bs-toggle="modal" data-bs-target="#exampleModal2" style="cursor: pointer;">Check Dealer</a></button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-5">
+          <div class="card" style="width: 20rem; height: 25rem; border-radius: 15px;">
+            <div class="inner">
+              <img src="bg-image2.jpg" class="card-img-top" style="border-radius: 15px;">
+            </div>
+            <div class="card-body">
+              <h5><b>Crops List</b></h5>
+              <p>Check out the Crops List and Perform Actions</p>
+              <br>
+              <button class="button-css-contact" > <a class="nav-link text-black" data-bs-toggle="modal" data-bs-target="#exampleModal3" style="cursor: pointer;">Check Crops</a></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  <!-- model-farmer -->
+  <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel1">Farmer List</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Farmer ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Contact No.</th>
+                <th>Delete</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Loop through the array of Farmer objects -->
+              <ng-container *ngFor="let farmer of farmers">
+                <tr>
+                  <td>{{ farmer.farmerId }}</td>
+                  <td>{{ farmer.farmerName }}</td>
+                  <td>{{ farmer.farmeremail }}</td>
+                  <td>{{ farmer.farmerContactNo }}</td>
+                  <td><button class="btn btn-danger btn-sm" >Delete</button></td>
+                </tr>
+              </ng-container>
+            </tbody>
+          </table>
+          
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+    <!-- model-dealer -->
+    <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel1">Dealer List</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Contact No</th>
+                  <th>Delete</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Loop through the array of Farmer objects -->
+                <ng-container *ngFor="let dealer of dealers">
+                  <tr>
+                    <td>{{ dealer.id }}</td>
+                    <td>{{ dealer.dealerName }}</td>
+                    <td>{{ dealer.dealerEmail }}</td>
+                    <td>{{ dealer.dealerContactNo }}</td>
+                    <td><button type="button" class="btn btn-danger">Delete</button></td>
+                  </tr>
+                </ng-container>
+              </tbody>
+            </table>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <!-- <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Update</button> -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    
+    <!-- model-crops -->
+    <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel1">Update Crop</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Crop Name</th>
+                  <th>Crop Quantity</th>
+                  <th>Location</th>
+                  <th>Price</th>
+                  <th>Uploaded By</th>
+                  <th>Delete</th>
+                </tr>
+              </thead>
+              <tbody>
+                <ng-container *ngFor="let crop of liveCrops">
+                  <tr>
+                    <td>{{ crop.id }}</td>
+                    <td>{{ crop.cropName }}</td>
+                    
+                    <td>{{ crop.cropQuantity }}</td>
+                    <td>
+                      <ul>
+                        <li *ngFor="let loc of crop.location">{{ loc }}</li>
+                      </ul>
+                    </td>
+                    <td>{{ crop.price }}</td>
+                    <td>{{ crop.uploadedBy }}</td>
+                    <td>
+                      <button type="button" class="btn btn-danger">Delete</button>
+                    </td>
+                  </tr>
+                </ng-container>
+              </tbody>
+            </table>
+            
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Update</button>
+          </div>
+        </div>
+      </div>
+    </div>
